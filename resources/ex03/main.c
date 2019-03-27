@@ -4,19 +4,29 @@
 #include <stdlib.h> //malloc, free, exit...
 
 #include "header.h"
+#define	CAPACITY 50000
 
 int main(void)
 {
 	struct s_art **arts;
-
+	int n;
 	arts = getArts(); //parsing the file and put it in an array
 
-	/*-------------------
-	launch your test here
-	--------------------*/
-	//struct s_dict *dict;
-	//
-	//
+		struct s_dict *dict;
+	int i = -1;
+
+	dict = dictInit(10000);
+	while (arts[++i])
+		dictInsert(dict, arts[i]->name, arts[i]);
+
+	// i = -1;
+	// while (arts[++i])
+	// 	printf("%s => %d\n", arts[i]->name, arts[i]->price);
+
+	i = -1;
+	while (arts[++i])
+		printf("%s => %d\n", arts[i]->name, searchPrice(dict, arts[i]->name));
+	return (0);
 
 	return (0);
 }

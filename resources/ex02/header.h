@@ -16,6 +16,8 @@ struct s_art {
   --------------------------------*/
 
 int searchPrice(struct s_art **arts, int n, char *name);
+void    sortArts(struct s_art **arts, int len);
+static int myCompare(const void* a, const void* b);
 
 
 /*--------------------------------

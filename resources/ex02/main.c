@@ -5,6 +5,8 @@
 
 #include "header.h"
 
+// #define MAX 6
+
 int main(void)
 {
 	struct s_art **arts;
@@ -14,8 +16,32 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//printf("price for the art \'%s\' is %d\n", "Guernica", searchPrice(arts, "Guernica"));
+	sortArts(arts, n - 1);
+	// n = -1121;
+	// for (int i = 0; i < MAX; i++) {
+	// 	printf("%s => %d\n", arts[i]->name, arts[i]->price);
+	// }
+	// printf("\n\n");
+	// printf("price for the art \'%s\' is %d\n", "geeksquiz", arts[searchPrice(arts, MAX, "geeksquiz")]->price);
+	// printf("price for the art \'%s\' is %d\n", "geeksquiz", arts[searchPrice(arts, MAX, "zwdw")]->price);
+	// printf("\n\n");
+	// for (int i = 0; i < MAX; i++) {
+	// 	printf("%s => %d\n", arts[i]->name, arts[i]->price);
+	// }
 
+	int i = searchPrice(arts, n, "Guernica");
+	printf("INDEX for the art \'%s\' is %d\n", "Guernica", i);
+	if (i >= 0)
+		printf("price for the art \'%s\' is %d\n", "Guernica", arts[i]->price);
+
+	// i = searchPrice(arts, n, "geeksquiz");
+	// printf("INDEX for the art \'%s\' is %d\n", "geeksquiz", i);
+	// if (i >= 0)
+	// 	printf("price for the art \'%s\' is %d\n", "geeksquiz", arts[i]->price);
+	// i = searchPrice(arts, n, "z");
+	// printf("INDEX for the art \'%s\' is %d\n", "z", i);
+	// if (i >= 0)
+	// 	printf("price for the art \'%s\' is %d\n", "z", arts[i]->price);
 	return (0);
 }
 

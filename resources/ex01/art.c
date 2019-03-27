@@ -11,28 +11,23 @@ int main(void)
 
 	arts = getArts(); //parsing the file and put it in an array
 
-	// arts =  (struct s_art **)malloc(sizeof(struct s_art *) * 4);
-	// arts[0] = getArts_createStruct(strdup("geeksforgeeks => 44"));
-	// arts[1] = getArts_createStruct(strdup("geeksquiz => 45"));
-	// arts[2] = getArts_createStruct(strdup("clanguage => 46"));
-	// arts[3] = NULL;
 	/*-------------------
 	launch your test here
 	--------------------*/
 
 	//sort the array
-	for (int i = 0; i < 30; i++) {
+	for (int i = 0; arts[i]; i++) {
 		printf("%s => %d\n", arts[i]->name, arts[i]->price);
 	}
-	printf("here\n");
 	sortArts(arts);
 
 	//print sorted array
 	printf("\n\n");
-	for (int i = 0; i < 30; i++) {
+	for (int i = 0; arts[i]; i++) {
 		printf("%s => %d\n", arts[i]->name, arts[i]->price);
 	}
-
+	// ft_free_list(arts);
+	// system("leaks a.out");
 	return (0);
 }
 

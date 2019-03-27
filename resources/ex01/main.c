@@ -5,6 +5,17 @@
 
 #include "header.h"
 
+void	ft_free_list(struct s_art **arts)
+{
+	for(int i = 0; arts[i];i++)
+	{
+		printf("%s\n", (arts[i])->name);
+		free((arts[i])->name);
+		// free((arts[i])->price);
+	}
+	free(arts);
+}
+
 int main(void)
 {
 	struct s_art **arts;
@@ -15,6 +26,19 @@ int main(void)
 	launch your test here
 	--------------------*/
 
+	for (int i = 0; i < 3; i++) {
+		printf("%s => %d\n", arts[i]->name, arts[i]->price);
+	}
+	printf("here\n");
+	sortArts(arts);
+
+	//print sorted array
+	printf("\n\n");
+	for (int i = 0; i < 3; i++) {
+		printf("%s => %d\n", arts[i]->name, arts[i]->price);
+	}
+	ft_free_list(arts);
+	system("leaks a.out");
 	return (0);
 }
 
@@ -23,7 +47,7 @@ int main(void)
 // Function used for the test
 // Don't go further :)
 
-#define FILENAME "art.txt"
+#define FILENAME "tset.txt"
 
 char	*readFile(void)
 {

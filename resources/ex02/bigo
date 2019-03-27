@@ -1,0 +1,2 @@
+O(log2 n) - A quantity representing the power to which a fixed number (the base) must be raised to produce a given number.
+O(1) space.
